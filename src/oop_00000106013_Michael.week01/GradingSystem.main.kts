@@ -1,6 +1,6 @@
 #!/usr/bin/env kotlin
 
-package oop_001_johnthor.week01
+package oop_00000106013_Michael.week01
 
 fun main(args: Array<String>) {
     var studentName: String = "John"
