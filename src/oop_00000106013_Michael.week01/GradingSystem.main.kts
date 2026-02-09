@@ -1,0 +1,9 @@
+#!/usr/bin/env kotlin
+
+package oop_001_johnthor.week01
+
+fun main(args: Array<String>) {
+    var studentName: String = "John"
+    var score: Int = 85
+    println("Student: " + studentName + ", Score: " + score)
+}
