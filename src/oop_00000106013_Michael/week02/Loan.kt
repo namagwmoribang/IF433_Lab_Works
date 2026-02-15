@@ -1,4 +1,4 @@
-package oop_00000106013_Michael.week02\
+package oop_00000106013_Michael.week02
 
 class Loan(
     val bookTitle: String,
