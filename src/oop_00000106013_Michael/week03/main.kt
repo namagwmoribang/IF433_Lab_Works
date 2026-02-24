@@ -1,25 +1,17 @@
 package oop_00000106013_Michael.week03
 
-class Employee(val name: String) {
-    var salary: Int = 0
-        set(value) {
-            if (value < 0) {
-                println("ERROR: Gaji tidak boleh negatif! Di-set ke 0.")
-                field = 0
-            } else {
-                field = value
-            }
-        }
+fun main() {
+    val e = Employee("Budi")
 
-    // Private property - hanya bisa diakses di class ini
-    private var performanceRating: Int = 3
+    // 1. Test Validasi Salary
+    e.salary = -1000 // Harusnya print Error
+    e.salary = 5000000
+    println("Gaji: ${e.salary}")
 
-    fun increasePerformance() {
-        performanceRating++
-        println("Kinerja $name meningkat! Rating: $performanceRating")
-    }
+    // 2. Test Encapsulation
+    e.increasePerformance()
+    // e.performanceRating = 5 // Uncomment ini pasti error (private)
 
-    fun printStatus() {
-        println("Karyawan: $name, Rating: $performanceRating")
-    }
+    // 3. Test Computed Property
+    println("Pajak yang harus dibayar: ${e.tax}")
 }
