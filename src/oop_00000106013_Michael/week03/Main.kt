@@ -1,12 +1,17 @@
 package oop_00000106013_Michael.week03
 
-package oop_00000108640_ChrissanderAlienGunawan.week03
-
 fun main() {
     val e = Employee("Budi")
 
-    // Test validasi
-    e.salary = -1000 // Harusnya error
+    // 1. Test Validasi Salary
+    e.salary = -1000 // Harusnya print Error
     e.salary = 5000000
     println("Gaji: ${e.salary}")
+
+    // 2. Test Encapsulation
+    e.increasePerformance()
+    // e.performanceRating = 5 // Uncomment ini pasti error (private)
+
+    // 3. Test Computed Property
+    println("Pajak yang harus dibayar: ${e.tax}")
 }
