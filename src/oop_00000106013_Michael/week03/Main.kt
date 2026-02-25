@@ -4,8 +4,8 @@ fun main() {
     val e = Employee("Budi")
 
     // 1. Test Validasi Salary
-    e.salary = -1000 // Harusnya print Error
-    e.salary = 5000000
+    e.salary = -1000.0  // Harusnya print Error
+    e.salary = 5000000.0
     println("Gaji: ${e.salary}")
 
     // 2. Test Encapsulation
