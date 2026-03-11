@@ -14,6 +14,7 @@ fun main() {
                 println("=> Terdeteksi sebagai Dosen (NIDN: ${pegawai.nidn})")
                 pegawai.mengajar()
             }
+
             is Admin -> {
                 println("=> Terdeteksi sebagai Admin")
                 pegawai.doAdminWork()
@@ -37,11 +38,21 @@ fun main() {
     val ewallet = EWallet(accountName = "John Doe", balance = 50000.0)
     val creditCard = CreditCard(accountName = "Jane Smith", limit = 100000.0)
 
-    // Polymorphic Collection
     val paymentMethods: List<PaymentMethod> = listOf(ewallet, creditCard)
 
     println("--- Percobaan Pembayaran Rp 75.000 ---")
     for (payment in paymentMethods) {
         payment.processPayment(75000.0)
+
+        // === TAMBAHKAN SMART CASTING DI BAWAH INI ===
+        // Smart Casting Challenge: Deteksi EWallet dan top up otomatis
+        if (payment is EWallet) {
+            println("=> Terdeteksi sebagai E-Wallet. Melakukan top up otomatis...")
+            payment.topUp(50000.0)
+            println("=> Mencoba pembayaran ulang setelah top up:")
+            payment.processPayment(75000.0)
+        }
+        println("-------------------------")
     }
 }
+
