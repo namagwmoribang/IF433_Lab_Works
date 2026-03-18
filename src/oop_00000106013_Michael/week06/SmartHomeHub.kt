@@ -11,9 +11,21 @@ class SmartHomeHub {
     fun turnOffAllSwitches() {
         println("\n[Hub] Mematikan semua perangkat yang bisa dimatikan...")
         for (device in devices) {
-            // Smart Casting dengan is
             if (device is Switchable) {
                 device.turnOff()
+            }
+        }
+    }
+
+    fun activateSecurityMode() {
+        println("\n[Hub] Mengaktifkan Mode Keamanan...")
+        for (device in devices) {
+            if (device is Recordable) {
+                device.startRecord()
+            }
+
+            if (device is SmartSpeaker) {
+                device.playMusic("Sirine Peringatan")
             }
         }
     }
