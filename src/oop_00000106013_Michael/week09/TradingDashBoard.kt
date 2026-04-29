@@ -51,4 +51,12 @@ fun main() {
 
     println("--- TOP PERFORMERS (Profit) ---")
     topPerformersString.forEach { println("  $it") }
+
+    println()
+    println("--- WORST PERFORMERS (Loss) ---")
+    worstPerformersString.forEach { println("  $it") }
+
+    println()
+    println("--- TRADED PAIRS ---")
+    println("  Unique Pairs: $uniquePairs")
 }
