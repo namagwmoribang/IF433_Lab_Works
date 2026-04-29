@@ -13,5 +13,8 @@ fun main() {
         TradeLog("BNBUSDT", "LONG", 25, 30.1, "OPEN"),    // WIN  - masih OPEN
         TradeLog("ETHUSDT", "SHORT", 5, -8.0, "OPEN"),    // LOSS - masih OPEN
         TradeLog("BTCUSDT", "SHORT", 15, 18.4, "CLOSED"),  // WIN  - BTC
+
     )
+    val closedTrades = tradeHistory
+        .filter { it.status == "CLOSED" }
 }
