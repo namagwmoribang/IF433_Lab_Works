@@ -35,4 +35,20 @@ fun main() {
     val uniquePairs = tradeHistory
         .map { it.pair }
         .toSet()
+
+    println("=== CRYPTO TRADING DASHBOARD ===")
+    println()
+
+    val totalClosed = closedTrades.size
+    val totalWin    = winningTrades.size
+    val winRate     = if (totalClosed > 0) (totalWin.toDouble() / totalClosed * 100) else 0.0
+
+    println("📊 Total Closed Trades : $totalClosed")
+    println("✅ Winning Trades      : $totalWin")
+    println("❌ Losing Trades       : ${losingTrades.size}")
+    println("📈 Win Rate            : ${"%.1f".format(winRate)}%")
+    println()
+
+    println("--- TOP PERFORMERS (Profit) ---")
+    topPerformersString.forEach { println("  $it") }
 }
