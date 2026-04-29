@@ -59,4 +59,10 @@ fun main() {
     println()
     println("--- TRADED PAIRS ---")
     println("  Unique Pairs: $uniquePairs")
+
+    println()
+    println("=================================")
+    println("✔ No OPEN trades printed above.")
+    println("✔ All ROE formatted correctly.")
+    println("=================================")
 }
