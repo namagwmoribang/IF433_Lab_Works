@@ -13,4 +13,12 @@ fun main() {
     println("All Students:")
     students.forEach { println("  ${it.name} - GPA: ${it.gpa}") }
 
+    println("\n=== HONOR STUDENTS PIPELINE ===")
+
+    val honorNames = students
+        .filter { it.gpa >= 3.5 }
+        .sortedBy { it.name }
+        .map { it.name.uppercase() }
+
+    honorNames.forEach { println("Honor Roll: $it") }
 }
