@@ -27,7 +27,7 @@ fun main() {
     val studentGrades = mapOf(
         "Alice" to "A",
         "Bob" to "B",
-        "Charlie" to "A" git
+        "Charlie" to "A"
     )
     println("Nilai Bob: ${studentGrades["Bob"]}")
 
