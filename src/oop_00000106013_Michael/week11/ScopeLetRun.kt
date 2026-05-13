@@ -1,6 +1,5 @@
 package oop_00000106013_Michael.week11
 
-
 fun main() {
     println("=== TEST LET FUNCTION ===")
     val name: String? = "Alexander"
