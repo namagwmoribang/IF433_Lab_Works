@@ -12,7 +12,7 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
     return availableGram - requestedGram
 }
 fun main() {
-    var currentKibbleStock = 50
+    val currentKibbleStock = 50  // ubah var → val (warning: never modified)
 
     try {
         dispenseKibble(requestedGram = 80, availableGram = currentKibbleStock, isJammed = false)
@@ -20,9 +20,12 @@ fun main() {
         println("Caught Domain Error: Dispenser macet. ${e.message}")
     } catch (e: FoodEmptyException) {
         println("Caught Domain Error: Stok tidak cukup. ${e.message}")
-    } catch (e: Exception) {
+    } catch (e: Exception) {        // parameter 'e' tidak perlu jika tidak dipakai
         println("Caught General Error: Terjadi kesalahan tidak terduga.")
     } finally {
-    println("Siklus pengecekan dispenser pagi selesai.")
-}
+        println("Siklus pengecekan dispenser pagi selesai.")
+    }
+
+    // Baris 27 — perbaiki runCatching
+    runCatching { dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false) }
 }
