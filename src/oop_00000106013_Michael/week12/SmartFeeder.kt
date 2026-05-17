@@ -2,14 +2,12 @@ package oop_00000106013_Michael.week12
 
 fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): Int {
     require(requestedGram > 0) { "Porsi kibble harus lebih dari 0 gr" }
-
     if (isJammed) {
         throw DispenserJamException()
     }
-
     if (requestedGram > availableGram) {
-        throw IllegalStateException("Stok kibble tidak cukup: tersedia $availableGram gr, diminta $requestedGram gr")
+        throw FoodEmptyException(requestedGram, availableGram)
     }
-
-    return requestedGram
+    println("Kibble berhasil dikeluarkan!")
+    return availableGram - requestedGram
 }
